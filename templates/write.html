@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>일기쓰는공간</title>
+</head>
+<body>
+    <fieldset>
+        <form action="/post" method="POST">
+        <input type="text" name="month" size=1>월 <input type="text" name="date" size=1>일<br>
+        <br>제목<input type="text" name="title"><br>
+        내용<input type="text" name="comment">
+        <input type="submit" value="등록">
+        </form>
+    </fieldset>
+</body>
+</html>

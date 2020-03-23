@@ -1,0 +1,14 @@
+.field_set{
+    margin:0 auto;
+    width: 600px;
+    position: middle;
+}
+
+.detail_link{
+    text-decoration: none;
+}
+
+.detail_link:hover{
+    background-color: black;
+    color:white
+}

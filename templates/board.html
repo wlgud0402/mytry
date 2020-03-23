@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기장</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>일기장</legend>
+        {% for board in boardList %}
+            <li><a href="/detail_board?detail={{board.id}}" class="detail_link">날짜{{board.board_month}}월{{board.board_date}}일____ 제목:{{board.board_title}}</a></li>
+        {% endfor %}
+    </fieldset>
+</body>
+</html>

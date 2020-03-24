@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
     <title>그날의 일기</title>
+
+    <!-- jquery를 가져옴 -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
 </head>
+
 <body>
+    <a href="/main">메인페이지로</a><br>
+    <a href="/board">일기장으로</a><br>
+    <a href="/write">일기쓰러가기</a><br>
+    <a href="/delete?delete_num={{detail.id}}">삭제</a>
     <fieldset>
         <legend>{{detail.board_month}}월{{detail.board_date}}일</legend>
         제목:{{detail.board_title}}<br>
         내용:{{detail.board_comment}}
     </fieldset>
-</body>
+    <script>
+        function onButtonClick (number) {
+            $(".btn" + number).append(
+                `<form action="/edit?edit_num=${number}" method='POST'><input type='text' name='edit'/><button>등록하기</button></form>`
+            )
+        }
+    </script>
+    <div class="btn{{detail.id}}"><button onClick="onButtonClick({{detail.id}})">수정하기</button></div>
 </html>

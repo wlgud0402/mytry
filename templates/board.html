@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <fieldset>
+    <div class="from_boardlink">
+    <a href="/main">메인페이지로</a><br>
+    <a href="/write">일기쓰러가기</a>
+    </div>
+    <fieldset class="board_fieldset">
         <legend>일기장</legend>
         {% for board in boardList %}
             <li><a href="/detail_board?detail={{board.id}}" class="detail_link">날짜{{board.board_month}}월{{board.board_date}}일____ 제목:{{board.board_title}}</a></li>
